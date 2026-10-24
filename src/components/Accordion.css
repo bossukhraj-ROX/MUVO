@@ -1,0 +1,73 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.accordion-item {
+  background: var(--bg-elevated);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: box-shadow var(--t-fast), border-color var(--t-fast);
+}
+
+.accordion-item.is-open {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--border);
+}
+
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--sp-4) var(--sp-5);
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color var(--t-fast);
+}
+
+.accordion-trigger:hover {
+  color: var(--forest-600);
+}
+
+.accordion-question {
+  padding-right: var(--sp-4);
+}
+
+.accordion-chevron {
+  flex-shrink: 0;
+  color: var(--ink-500);
+  transition: transform 0.3s var(--ease-out), color var(--t-fast);
+}
+
+.accordion-item.is-open .accordion-chevron {
+  transform: rotate(180deg);
+  color: var(--forest-500);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease-out);
+}
+
+.accordion-content-inner {
+  padding: 0 var(--sp-5) var(--sp-5);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.accordion-content-inner a {
+  color: var(--forest-600);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.accordion-content-inner a:hover {
+  color: var(--forest-500);
+}

@@ -1,0 +1,324 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.overview-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.overview-title {
+  margin-bottom: var(--sp-1);
+}
+
+.overview-address {
+  color: var(--text-muted);
+}
+
+/* Progress card */
+.overview-progress {
+  padding: var(--sp-5);
+}
+
+.overview-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-3);
+}
+
+.overview-progress-label {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.overview-progress-pct {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--forest-600);
+}
+
+.overview-progress-bar {
+  height: 10px;
+  background: var(--ivory-300);
+  border-radius: var(--r-full);
+  overflow: hidden;
+  margin-bottom: var(--sp-3);
+}
+
+.overview-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--forest-400), var(--mint-500));
+  border-radius: var(--r-full);
+  transition: width 0.8s var(--ease-out);
+}
+
+.overview-progress-stats {
+  display: flex;
+  gap: var(--sp-5);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.overview-progress-stats span {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+/* Stat cards */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (min-width: 640px) {
+  .overview-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.overview-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  text-align: left;
+  position: relative;
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.overview-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-md);
+  background: var(--sage-100);
+  color: var(--forest-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overview-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.overview-card-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-600);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.overview-card-stat {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ink-900);
+  line-height: 1.2;
+}
+
+.overview-card-label {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+}
+
+.overview-card-sub {
+  font-size: 0.75rem;
+  color: var(--error-600);
+  font-weight: 500;
+}
+
+.overview-card-arrow {
+  position: absolute;
+  top: var(--sp-5);
+  right: var(--sp-5);
+  color: var(--ink-300);
+  transition: transform var(--t-fast), color var(--t-fast);
+}
+
+.overview-card:hover .overview-card-arrow {
+  transform: translateX(3px);
+  color: var(--forest-500);
+}
+
+.overview-card-progress {
+  width: 100%;
+}
+
+.overview-card-progress-bar {
+  height: 4px;
+  background: var(--ivory-300);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.overview-card-progress-fill {
+  height: 100%;
+  background: var(--forest-400);
+  border-radius: var(--r-full);
+  transition: width 0.6s var(--ease-out);
+}
+
+/* Incomplete items */
+.overview-incomplete {
+  padding: var(--sp-5);
+}
+
+.overview-incomplete-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.overview-incomplete-header h2 {
+  flex: 1;
+}
+
+.overview-incomplete-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.overview-incomplete-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.overview-incomplete-room {
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.overview-incomplete-sep {
+  color: var(--ink-400);
+}
+
+.overview-incomplete-label {
+  color: var(--text-muted);
+}
+
+/* Deductions */
+.overview-deductions {
+  padding: var(--sp-5);
+}
+
+.overview-deductions-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.overview-deductions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.overview-deduction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.overview-deduction-info {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.overview-deduction-desc {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink-800);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overview-deduction-amount {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--ink-900);
+  flex-shrink: 0;
+}
+
+/* Rooms grid */
+.overview-section-title {
+  margin-bottom: var(--sp-4);
+}
+
+.overview-rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-3);
+}
+
+@media (min-width: 640px) {
+  .overview-rooms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.overview-room-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-4);
+  text-align: left;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+}
+
+.overview-room-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.overview-room-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink-900);
+}
+
+.overview-room-progress {
+  height: 4px;
+  background: var(--ivory-300);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.overview-room-progress-fill {
+  height: 100%;
+  background: var(--forest-400);
+  border-radius: var(--r-full);
+  transition: width 0.6s var(--ease-out);
+}

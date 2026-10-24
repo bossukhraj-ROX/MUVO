@@ -1,0 +1,108 @@
+.photo-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(10, 24, 18, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-6);
+  animation: fadeIn 0.2s var(--ease-out);
+}
+
+.pv-close {
+  position: absolute;
+  top: var(--sp-5);
+  right: var(--sp-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-full);
+  color: var(--ivory-100);
+  background: rgba(255,255,255,0.1);
+  transition: background var(--t-fast);
+}
+
+.pv-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.pv-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-full);
+  color: var(--ivory-100);
+  background: rgba(255,255,255,0.1);
+  transition: background var(--t-fast);
+}
+
+.pv-nav:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.pv-prev { left: var(--sp-4); }
+.pv-next { right: var(--sp-4); }
+
+.pv-content {
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
+.pv-image {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-xl);
+}
+
+.pv-info {
+  text-align: center;
+  color: var(--ivory-100);
+}
+
+.pv-caption {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: var(--sp-1);
+}
+
+.pv-note {
+  font-size: 0.875rem;
+  color: var(--sage-200);
+  margin-bottom: var(--sp-1);
+}
+
+.pv-date {
+  font-size: 0.75rem;
+  color: var(--ink-400);
+}
+
+.pv-count {
+  font-size: 0.75rem;
+  color: var(--ink-400);
+  margin-top: var(--sp-1);
+}
+
+@media (max-width: 640px) {
+  .pv-nav {
+    width: 40px;
+    height: 40px;
+  }
+  .pv-prev { left: var(--sp-2); }
+  .pv-next { right: var(--sp-2); }
+}
